@@ -53,8 +53,8 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(attribute)
-    
+  def self.find_by(attribute_hash)
+    values = attributes_hash.value.first
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{attribute}' OR grade = '#{attribute}'"
     DB[:conn].execute(sql)
   end
